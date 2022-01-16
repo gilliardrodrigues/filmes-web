@@ -1,0 +1,69 @@
+body, ul { /* Resetando a margem e o padding do body e do ul */
+    padding: 0;
+    margin: 0;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.item {
+    flex-grow: 1;
+    background-position: center;
+    background-size: cover;
+    -webkit-filter: grayscale(100%); /* Para funcionar no Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    position: relative;
+    list-style: none;
+    transition: all .7s ease-in-out;
+}
+.item:hover {
+    flex-grow: 10;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+.item a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.texto {
+    font-size: 0; /* Para que o texto não apareça enquanto ainda não tiver passado o mouse por cima da imagem */
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    transition: all .7s ease-in-out;
+}
+.item:hover .texto {
+    font-size: 32px;
+    text-shadow: 2px 2px 12px black;
+}
+.primeiro {
+    background-image: url(img/poster-venom-2.jpg);
+}
+.segundo {
+    background-image: url(img/poster-eternals.jpg);
+}
+.terceiro {
+    background-image: url(img/poster-no-way-home.jpg);
+}
+.quarto {
+    background-image: url(img/poster-matrix-resurrections.jpg);
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px){
+    .container {
+        flex-direction: column;
+    }
+    .texto {
+        font-size: 16px;
+    }
+}
